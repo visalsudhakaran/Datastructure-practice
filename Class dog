@@ -1,0 +1,16 @@
+class myDog{
+  constructor(color,breed,height){
+    this.color = color;
+    this.breed = breed;
+    this.height = height;
+  }
+
+  bow(){
+    return `my breed is ${this.breed} my color is ${this.color} my height is ${this.height}`
+  }
+  
+}
+
+const dog1 = new myDog('brown','labrador','20 cm')
+dog1.bow()
+dog1.color
