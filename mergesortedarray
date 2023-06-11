@@ -1,0 +1,10 @@
+function mergeSorted(str){
+  const sortedArray = [];
+  for (let i=0; i<str.length;i++){
+    sortedArray.push(str[i])
+  }
+  return sortedArray;
+  
+  
+}
+mergeSorted('asdfafdasdfasdf','asdfasdfasdf')
