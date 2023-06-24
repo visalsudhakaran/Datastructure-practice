@@ -1,0 +1,44 @@
+class hashTable{
+  constructor(size){
+    this.data = new Array(size);
+  }
+
+  _hash(key){
+    let hash =0;
+    for(let i=0 ; i<=key.length; i++){
+      hash = (hash + key.charCodeAt(i)) % this.data.length
+      
+    }
+    return hash
+  }
+  set(key,value){
+    
+    let address = this._hash(key);
+    
+    if(!this.data[address]){
+      this.data[address]  = [];
+      this.data[address].push([key,value])
+      console.log(this.data)
+    }else
+      this.data[address].push([key,value])
+      return this.data
+    
+    
+  }
+  get(key){
+    let address = this._hash(key);
+    const currentbucket = this.data[address]  
+    for(let i = 0; i<currentbucket.length; i++){
+      if(currentbucket[i][0] === key){
+        return currentbucket[i][1]
+      }
+    }
+    
+  }
+  
+}
+
+const hash1 = new hashTable(50)
+hash1.set('grapes',10000);
+console.log(hash1.get('grapes'))
+
